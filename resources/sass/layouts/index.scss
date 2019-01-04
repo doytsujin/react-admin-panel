@@ -1,0 +1,54 @@
+// ****************** Default Layout ******************
+
+.index_layout_header {
+    grid-area: index_header;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 15px;
+
+    color: $blueColor;
+    background-color: $grayColor;
+    border-bottom: 1px solid $borderColor;
+}
+
+.index_layout_content {
+    grid-area: index_content;
+
+    padding: 15px;
+
+    color: $textColor;
+
+    overflow-y: auto;
+}
+
+.index_layout_container {
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: auto;
+    grid-template-rows: 100px auto;
+
+    grid-template-areas:
+        "index_header index_header"
+        "index_content index_content";
+}
+
+
+
+// ****************** Tablet and Modile Layout ******************
+
+@media screen and (max-width: $mediumDisplay) {
+    .index_layout_header {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .index_layout_container {
+        grid-template-rows: 150px auto;
+    }
+}

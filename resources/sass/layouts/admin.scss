@@ -1,0 +1,103 @@
+// ****************** Default Layout ******************
+
+.admin_layout_logo {
+    grid-area: admin_logo;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: $blueColor;
+    background-color: $grayColor;
+
+    border-right: 1px solid $borderColor;
+}
+
+.admin_layout_header {
+    grid-area: admin_header;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding: 0 15px;
+
+    color: $blueColor;
+    background-color: $grayColor;
+
+    border-bottom: 1px solid $borderColor;
+}
+
+.admin_layout_sidebar {
+    grid-area: admin_sidebar;
+
+    background-color: $grayColor;
+
+    border-right: 1px solid $borderColor;
+
+    overflow-y: auto;
+}
+
+.admin_layout_content {
+    grid-area: admin_content;
+
+    padding: 15px;
+
+    color: $textColor;
+
+    overflow-y: auto;
+}
+
+.admin_layout_container {
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 300px auto;
+    grid-template-rows: 100px auto;
+
+    grid-template-areas: "admin_logo admin_header" "admin_sidebar admin_content";
+}
+
+
+// ****************** Tablet and Mobile Layout ******************
+
+@media screen and (max-width: $mediumDisplay) {
+    .admin_layout_logo {
+        h1 {
+            display: none;
+        }
+    }
+
+    .admin_layout_container {
+        grid-template-columns: 80px auto;
+        grid-template-rows: 100px auto;
+    }
+}
+
+
+// ****************** Mobile Layout ******************
+
+@media screen and (max-width: $smallDisplay) {
+    .admin_layout_logo {
+        display: none;
+    }
+
+
+    .admin_layout_header {
+        justify-content: center;
+        border-bottom: none;
+    }
+
+    .admin_layout_sidebar {
+        border-bottom: 1px solid $borderColor;
+    }
+
+    .admin_layout_container {
+        grid-template-columns: auto;
+        grid-template-rows: 100px auto 1fr;
+
+        grid-template-areas: "admin_header" "admin_sidebar" "admin_content";
+    }
+}

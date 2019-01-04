@@ -1,0 +1,29 @@
+.link_btn {
+    display: inline-block;
+    padding: 5px 15px;
+
+    border: 2px solid $borderColor;
+    border-radius: 5px;
+
+    a {
+        color: $textColor;
+        text-decoration: none;
+
+    }
+}
+
+.menu_action_btn {
+    font-size: 24px;
+    color: $blueColor;
+    display: none;
+}
+
+
+// ****************** Mobile Layout ******************
+
+@media screen and (max-width: $smallDisplay) {
+    .menu_action_btn {
+        display: block;
+    }
+}
+

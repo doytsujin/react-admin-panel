@@ -5,6 +5,7 @@ Simple Admin Panel with Laravel + React + CSS Grids
 # Installation
 
 1. Check out the latest release from GitHub:
+
 ```    
     git clone https://github.com/kambur-andriy/react-admin-panel.git
 ```    
@@ -49,7 +50,7 @@ Simple Admin Panel with Laravel + React + CSS Grids
     ```        
         php artisan key:generate
     ```        
-    
+            
     * Install PHP libraries
 
     ```        
@@ -64,4 +65,13 @@ Simple Admin Panel with Laravel + React + CSS Grids
     
 # Usage
 
-This application is an example of simple Admin Panel. 
+This application is an example of simple Admin Panel.
+Use
+
+        npm run development -- --watch
+
+during a development process, and 
+
+        npm run production
+        
+to build a production version.

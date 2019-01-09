@@ -11,6 +11,15 @@
     background-color: $grayColor;
 
     border-right: 1px solid $borderColor;
+
+    .logo_title {
+        font-size: 24px;
+    }
+
+    .logo_icon {
+        font-size: 24px;
+        display: none;
+    }
 }
 
 .admin_layout_header {
@@ -28,8 +37,8 @@
     border-bottom: 1px solid $borderColor;
 }
 
-.admin_layout_sidebar {
-    grid-area: admin_sidebar;
+.admin_sidebar_menu {
+    grid-area: sidebar_menu;
 
     background-color: $grayColor;
 
@@ -57,7 +66,9 @@
     grid-template-columns: 300px auto;
     grid-template-rows: 100px auto;
 
-    grid-template-areas: "admin_logo admin_header" "admin_sidebar admin_content";
+    grid-template-areas:
+        "admin_logo admin_header"
+        "sidebar_menu admin_content";
 }
 
 
@@ -65,8 +76,12 @@
 
 @media screen and (max-width: $mediumDisplay) {
     .admin_layout_logo {
-        h1 {
+        .logo_title {
             display: none;
+        }
+
+        .logo_icon {
+            display: block;
         }
     }
 
@@ -81,23 +96,41 @@
 
 @media screen and (max-width: $smallDisplay) {
     .admin_layout_logo {
-        display: none;
-    }
+        border: none;
 
+        .logo_title {
+            display: block;
+        }
+
+        .logo_icon {
+            display: none;
+        }
+    }
 
     .admin_layout_header {
         justify-content: center;
         border-bottom: none;
     }
 
-    .admin_layout_sidebar {
-        border-bottom: 1px solid $borderColor;
+    .admin_sidebar_menu {
+        grid-column: 2 / 4;
+        grid-row: 1 / 4;
+
+        z-index: 1;
+
+        &.closed {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+        }
     }
 
     .admin_layout_container {
-        grid-template-columns: auto;
-        grid-template-rows: 100px auto 1fr;
+        grid-template-columns: 50px auto 50px;
+        grid-template-rows: 50px 100px auto;
 
-        grid-template-areas: "admin_header" "admin_sidebar" "admin_content";
+        grid-template-areas:
+            "admin_logo admin_logo sidebar_menu"
+            "admin_header admin_header admin_header"
+            "admin_content admin_content admin_content";
     }
 }

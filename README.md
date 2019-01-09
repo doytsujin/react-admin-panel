@@ -45,12 +45,6 @@ Simple Admin Panel with Laravel + React + CSS Grids
     
     * Rename .env.example to .env
     
-    * Generate new project key
-    
-    ```        
-        php artisan key:generate
-    ```        
-            
     * Install PHP libraries
 
     ```        
@@ -61,6 +55,12 @@ Simple Admin Panel with Laravel + React + CSS Grids
 
     ```        
         npm install
+    ```        
+    
+    * Generate new project key
+    
+    ```        
+        php artisan key:generate
     ```        
     
 # Usage

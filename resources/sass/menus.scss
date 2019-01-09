@@ -1,11 +1,14 @@
 // ****************** Default Layout ******************
 
-.sidebar_menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-
+.admin_sidebar_menu {
     padding: 15px;
+
+    overflow-y: auto;
+
+    .menu_toggle_btn {
+        color: $blueColor;
+        display: none;
+    }
 
     .menu_item {
         display: flex;
@@ -44,8 +47,7 @@
 // ****************** Tablet Layout ******************
 
 @media screen and (min-width: $smallDisplay) and(max-width: $mediumDisplay) {
-    .sidebar_menu {
-        align-items: center;
+    .admin_sidebar_menu {
 
         .menu_item {
 
@@ -57,6 +59,7 @@
                 display: none;
             }
         }
+
     }
 }
 
@@ -64,17 +67,22 @@
 // ****************** Mobile Layout ******************
 
 @media screen and (max-width: $smallDisplay) {
-    .sidebar_menu {
-        align-items: center;
+    .admin_sidebar_menu {
+        border-left: 1px solid $borderColor;
 
-        .menu_icon {
-            display: none;
+        .menu_toggle_btn {
+            display: block;
+
+            text-align: right;
         }
 
         &.closed {
+            border: none;
+
             .menu_item {
                 display: none;
             }
         }
+
     }
 }

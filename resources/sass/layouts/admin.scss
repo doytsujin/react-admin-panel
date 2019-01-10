@@ -2,59 +2,18 @@
 
 .admin_layout_logo {
     grid-area: admin_logo;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    color: $blueColor;
-    background-color: $grayColor;
-
-    border-right: 1px solid $borderColor;
-
-    .logo_title {
-        font-size: 24px;
-    }
-
-    .logo_icon {
-        font-size: 24px;
-        display: none;
-    }
 }
 
 .admin_layout_header {
     grid-area: admin_header;
-
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-
-    padding: 0 15px;
-
-    color: $blueColor;
-    background-color: $grayColor;
-
-    border-bottom: 1px solid $borderColor;
 }
 
 .admin_sidebar_menu {
     grid-area: sidebar_menu;
-
-    background-color: $grayColor;
-
-    border-right: 1px solid $borderColor;
-
-    overflow-y: auto;
 }
 
 .admin_layout_content {
     grid-area: admin_content;
-
-    padding: 15px;
-
-    color: $textColor;
-
-    overflow-y: auto;
 }
 
 .admin_layout_container {
@@ -75,15 +34,6 @@
 // ****************** Tablet and Mobile Layout ******************
 
 @media screen and (max-width: $mediumDisplay) {
-    .admin_layout_logo {
-        .logo_title {
-            display: none;
-        }
-
-        .logo_icon {
-            display: block;
-        }
-    }
 
     .admin_layout_container {
         grid-template-columns: 80px auto;
@@ -95,22 +45,6 @@
 // ****************** Mobile Layout ******************
 
 @media screen and (max-width: $smallDisplay) {
-    .admin_layout_logo {
-        border: none;
-
-        .logo_title {
-            display: block;
-        }
-
-        .logo_icon {
-            display: none;
-        }
-    }
-
-    .admin_layout_header {
-        justify-content: center;
-        border-bottom: none;
-    }
 
     .admin_sidebar_menu {
         grid-column: 2 / 4;
@@ -133,4 +67,5 @@
             "admin_header admin_header admin_header"
             "admin_content admin_content admin_content";
     }
+
 }

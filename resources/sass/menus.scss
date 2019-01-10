@@ -1,11 +1,36 @@
 // ****************** Default Layout ******************
 
-.sidebar_menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+.admin_sidebar_menu {
 
     padding: 15px;
+
+    border-right: 1px solid $borderColor;
+
+    overflow-y: auto;
+
+    background-color: $grayColor;
+
+    .admin_logo {
+        text-align: center;
+        padding: 25px 0;
+
+        .logo_title {
+            font-size: 24px;
+            color: $blueColor;
+        }
+
+        .logo_icon {
+            font-size: 24px;
+            color: $blueColor;
+            display: none;
+        }
+
+    }
+
+    .menu_toggle_btn {
+        color: $blueColor;
+        display: none;
+    }
 
     .menu_item {
         display: flex;
@@ -44,8 +69,19 @@
 // ****************** Tablet Layout ******************
 
 @media screen and (min-width: $smallDisplay) and(max-width: $mediumDisplay) {
-    .sidebar_menu {
-        align-items: center;
+    .admin_sidebar_menu {
+
+        .admin_logo {
+
+            .logo_title {
+                display: none;
+            }
+
+            .logo_icon {
+                display: block;
+            }
+
+        }
 
         .menu_item {
 
@@ -57,6 +93,7 @@
                 display: none;
             }
         }
+
     }
 }
 
@@ -64,17 +101,32 @@
 // ****************** Mobile Layout ******************
 
 @media screen and (max-width: $smallDisplay) {
-    .sidebar_menu {
-        align-items: center;
-
-        .menu_icon {
-            display: none;
-        }
+    .admin_sidebar_menu {
 
         &.closed {
+
             .menu_item {
                 display: none;
             }
         }
+
+        .menu_toggle_btn {
+            display: block;
+
+            text-align: right;
+        }
+
+        .admin_logo {
+            padding: 5px 0;
+        }
+
+        .menu_item {
+            text-align: center;
+
+            .menu_icon {
+                display: none;
+            }
+        }
+
     }
 }

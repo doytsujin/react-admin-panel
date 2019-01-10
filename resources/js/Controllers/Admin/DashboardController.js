@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Button from '../../Components/Buttons/LinkButton';
-import SidebarMenu from '../../Components/Menus/SidebarMenu';
+import Header from '../../Components/AdminHeader';
+import Menu from '../../Components/AdminSidebarMenu';
 
 class DashboardController extends Component {
     constructor() {
@@ -12,21 +12,15 @@ class DashboardController extends Component {
         return (
 
             <div className="admin_layout_container">
-                <div className="admin_layout_logo">
-                    <h1>Admin Panel</h1>
-                </div>
+                <Menu/>
 
-                <div className="admin_layout_header">
-                    <Button link='/' label='Switch to the Index Page'/>
-                </div>
+                <div className="admin_layout_content_wrapper">
+                    <Header/>
 
-                <div className="admin_layout_sidebar">
-                    <SidebarMenu />
-                </div>
-
-                <div className="admin_layout_content">
-                    <div className="text_center">
-                        This is the <i className="text_blue text_bold">Admin Dashboard Page</i>
+                    <div className="admin_layout_content">
+                        <div className="text_center">
+                            This is the <i className="text_blue text_bold">Admin Dashboard Page</i>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,78 +1,45 @@
 // ****************** Default Layout ******************
 
-.admin_layout_logo {
-    grid-area: admin_logo;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    color: $blueColor;
-    background-color: $grayColor;
-
-    border-right: 1px solid $borderColor;
-}
-
-.admin_layout_header {
-    grid-area: admin_header;
-
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-
-    padding: 0 15px;
-
-    color: $blueColor;
-    background-color: $grayColor;
-
-    border-bottom: 1px solid $borderColor;
-}
-
-.admin_layout_sidebar {
-    grid-area: admin_sidebar;
-
-    background-color: $grayColor;
-
-    border-right: 1px solid $borderColor;
-
-    overflow-y: auto;
-}
-
-.admin_layout_content {
-    grid-area: admin_content;
-
-    padding: 15px;
-
-    color: $textColor;
-
-    overflow-y: auto;
-}
-
 .admin_layout_container {
     width: 100vw;
     height: 100vh;
 
-    display: grid;
+    display: flex;
 
-    grid-template-columns: 300px auto;
-    grid-template-rows: 100px auto;
+    .admin_sidebar_menu {
+        flex: 0;
+        flex-basis: 300px;
+    }
 
-    grid-template-areas: "admin_logo admin_header" "admin_sidebar admin_content";
+    .admin_layout_content_wrapper {
+        flex: 1;
+
+        display: flex;
+        flex-direction: column;
+
+        .admin_layout_header {
+            flex: 0;
+            flex-basis: 100px;
+        }
+
+        .admin_layout_content {
+            flex: 1;
+        }
+    }
 }
+
+
 
 
 // ****************** Tablet and Mobile Layout ******************
 
 @media screen and (max-width: $mediumDisplay) {
-    .admin_layout_logo {
-        h1 {
-            display: none;
-        }
-    }
-
     .admin_layout_container {
-        grid-template-columns: 80px auto;
-        grid-template-rows: 100px auto;
+
+        .admin_sidebar_menu {
+            flex-basis: 50px;
+        }
+
     }
 }
 
@@ -80,24 +47,16 @@
 // ****************** Mobile Layout ******************
 
 @media screen and (max-width: $smallDisplay) {
-    .admin_layout_logo {
-        display: none;
-    }
-
-
-    .admin_layout_header {
-        justify-content: center;
-        border-bottom: none;
-    }
-
-    .admin_layout_sidebar {
-        border-bottom: 1px solid $borderColor;
-    }
 
     .admin_layout_container {
-        grid-template-columns: auto;
-        grid-template-rows: 100px auto 1fr;
+        flex-direction: column;
 
-        grid-template-areas: "admin_header" "admin_sidebar" "admin_content";
+        .admin_sidebar_menu {
+            flex-basis: auto;
+
+
+        }
+
     }
+
 }

@@ -1,25 +1,6 @@
 // ****************** Default Layout ******************
 
-.error_layout_content {
-    grid-area: error_content;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    color: $textColor;
-}
-
 .error_layout_container {
     width: 100vw;
     height: 100vh;
-
-    display: grid;
-
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-
-    grid-template-areas:
-        "error_content";
 }
